@@ -1,0 +1,9 @@
+resources:
+  jobs:
+    realtime_fraud_streaming_workflow:
+      name: "[${bundle.target}] Real-Time Payments Fraud Continuous Stream"
+      tasks:
+        - task_key: fraud_stream_task
+          spark_python_task:
+            python_file: ../src/project2_realtime_fraud/streaming_fraud.py
+          environment_key: serverless_streaming

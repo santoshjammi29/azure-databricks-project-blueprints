@@ -1,0 +1,11 @@
+resources:
+  jobs:
+    omnichannel_retail_workflow:
+      name: "[${bundle.target}] Omnichannel Retail Medallion Pipeline"
+      schedule:
+        quartz_cron_expression: "0 0 * * * ?"
+        timezone_id: "UTC"
+      tasks:
+        - task_key: run_dlt_pipeline
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.retail_dlt_pipeline.id}

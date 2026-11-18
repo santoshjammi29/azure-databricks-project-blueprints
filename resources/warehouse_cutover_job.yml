@@ -1,0 +1,11 @@
+resources:
+  jobs:
+    warehouse_cutover_verification_workflow:
+      name: "[${bundle.target}] Dual-Run Parity & Reconciliation Engine"
+      schedule:
+        quartz_cron_expression: "0 30 3 * * ?"
+        timezone_id: "UTC"
+      tasks:
+        - task_key: run_parity_reconciliation
+          spark_python_task:
+            python_file: ../src/project3_warehouse_modernization/dual_run_parity.py
