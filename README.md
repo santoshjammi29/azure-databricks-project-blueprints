@@ -41,10 +41,10 @@ This repository contains end-to-end design blueprints, code implementations, and
 | # | Topic / Concept | Level | Architectural Definition & Core Principle |
 |:---:|---|:---:|---|
 | 1 | **Unity Catalog** | 🟢<br>Easy | Unity Catalog is Databricks' centralized, multi-cloud governance solution providing unified access control, data auditing, lineage tracking, and discovery across all workspace assets. |
-| 2 | **Stream-Static Joins** | 🟡<br>Intermediate | Joining streaming DataFrames with batch DataFrames. |
-| 3 | **Structured Streaming Fundamentals** | 🟡<br>Intermediate | How Structured Streaming on Databricks uses Delta Lake as both source and sink. |
+| 2 | **Stream-Static Joins** | 🟡<br>Intermediate | A stateful stream enrichment pattern that joins real-time streaming DataFrames with static reference or dimensional tables without requiring unbounded streaming state retention. |
+| 3 | **Structured Streaming Fundamentals** | 🟡<br>Intermediate | The scalable, fault-tolerant stream processing engine in Apache Spark that models streaming data as append-only unbounded tables, leveraging Delta Lake sources and sinks with exactly-once guarantees. |
 | 4 | **Apache Kafka Architecture** | 🔴<br>Advanced | A distributed event streaming platform based on a distributed commit log, providing high-throughput, durable, and fault-tolerant publish-subscribe messaging with configurable delivery guarantees. |
-| 5 | **Stream-Stream Joins** | 🔴<br>Advanced | Joining two streaming DataFrames. |
+| 5 | **Stream-Stream Joins** | 🔴<br>Advanced | A bidirectional stateful join between two continuous real-time data streams requiring event-time watermarking and time-interval constraints on both sides to bound in-memory state buffer growth. |
 | 6 | **Structured Streaming Watermarking & Allowed Lateness** | 🔴<br>Advanced | Threshold specifying how far event-time can lag behind maximum observed event-time before data is dropped. |
 | 7 | **Dead-Letter Queue (DLQ) Quarantine Architecture** | 🟣<br>Architect | An isolation mechanism that routes malformed, corrupted, or non-conforming data records to a quarantined storage queue without halting primary pipeline execution. |
 | 8 | **Debezium CDC & Analytical Stream Decoupling** | 🟣<br>Architect | Debezium CDC is a distributed transaction log mining engine that captures row-level database changes in real time, streaming events into Kafka to decouple OLTP from analytical lakehouses. |
