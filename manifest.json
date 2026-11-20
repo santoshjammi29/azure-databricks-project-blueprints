@@ -1,0 +1,109 @@
+{
+  "repo": "azure-databricks-project-blueprints",
+  "github": "santoshjammi29/azure-databricks-project-blueprints",
+  "name": "Databricks Project Blueprints",
+  "role": "3 Full-scale production reference architectures: Retail Omnichannel Lakehouse, Real-time Fraud, Warehouse Cutover",
+  "last_synced": "2026-11-20T08:25:01.800445Z",
+  "entry_count": 9,
+  "entries": [
+    {
+      "id": "azure-databricks-project-blueprints-common",
+      "type": "production_project",
+      "title": "Project: Common",
+      "difficulty": "L400",
+      "relative_path": "src/common",
+      "pillars": [
+        "Databricks Platform & Lakehouse",
+        "Real-Time Streaming & Event Architecture"
+      ]
+    },
+    {
+      "id": "azure-databricks-project-blueprints-project1_omnichannel_retail",
+      "type": "production_project",
+      "title": "Project: Project1 Omnichannel Retail",
+      "difficulty": "L400",
+      "relative_path": "src/project1_omnichannel_retail",
+      "pillars": [
+        "Databricks Platform & Lakehouse",
+        "Real-Time Streaming & Event Architecture"
+      ]
+    },
+    {
+      "id": "azure-databricks-project-blueprints-project2_realtime_fraud",
+      "type": "production_project",
+      "title": "Project: Project2 Realtime Fraud",
+      "difficulty": "L400",
+      "relative_path": "src/project2_realtime_fraud",
+      "pillars": [
+        "Databricks Platform & Lakehouse",
+        "Real-Time Streaming & Event Architecture"
+      ]
+    },
+    {
+      "id": "azure-databricks-project-blueprints-project3_warehouse_modernization",
+      "type": "production_project",
+      "title": "Project: Project3 Warehouse Modernization",
+      "difficulty": "L400",
+      "relative_path": "src/project3_warehouse_modernization",
+      "pillars": [
+        "Databricks Platform & Lakehouse",
+        "Real-Time Streaming & Event Architecture"
+      ]
+    },
+    {
+      "id": "azure-databricks-project-blueprints-doc-00_platform_architecture_security",
+      "type": "architecture_blueprint",
+      "title": "Architecture: 00 Platform Architecture Security",
+      "difficulty": "L400",
+      "relative_path": "docs/00_platform_architecture_security.md",
+      "pillars": [
+        "Databricks Platform & Lakehouse",
+        "Real-Time Streaming & Event Architecture"
+      ]
+    },
+    {
+      "id": "azure-databricks-project-blueprints-doc-01_omnichannel_retail_lakehouse",
+      "type": "architecture_blueprint",
+      "title": "Architecture: 01 Omnichannel Retail Lakehouse",
+      "difficulty": "L400",
+      "relative_path": "docs/01_omnichannel_retail_lakehouse.md",
+      "pillars": [
+        "Databricks Platform & Lakehouse",
+        "Real-Time Streaming & Event Architecture"
+      ]
+    },
+    {
+      "id": "azure-databricks-project-blueprints-doc-02_realtime_payments_fraud_aml",
+      "type": "architecture_blueprint",
+      "title": "Architecture: 02 Realtime Payments Fraud Aml",
+      "difficulty": "L400",
+      "relative_path": "docs/02_realtime_payments_fraud_aml.md",
+      "pillars": [
+        "Databricks Platform & Lakehouse",
+        "Real-Time Streaming & Event Architecture"
+      ]
+    },
+    {
+      "id": "azure-databricks-project-blueprints-doc-03_legacy_warehouse_modernization",
+      "type": "architecture_blueprint",
+      "title": "Architecture: 03 Legacy Warehouse Modernization",
+      "difficulty": "L400",
+      "relative_path": "docs/03_legacy_warehouse_modernization.md",
+      "pillars": [
+        "Databricks Platform & Lakehouse",
+        "Real-Time Streaming & Event Architecture"
+      ]
+    },
+    {
+      "id": "azure-databricks-project-blueprints-doc-04_senior_interview_defense_matrix",
+      "type": "architecture_blueprint",
+      "title": "Architecture: 04 Senior Interview Defense Matrix",
+      "difficulty": "L400",
+      "relative_path": "docs/04_senior_interview_defense_matrix.md",
+      "pillars": [
+        "Databricks Platform & Lakehouse",
+        "Real-Time Streaming & Event Architecture"
+      ]
+    }
+  ]
+}

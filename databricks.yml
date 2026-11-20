@@ -1,5 +1,30 @@
+# =============================================================================
+# Databricks Asset Bundle (DABs): Azure Databricks Enterprise Project Blueprints
+# Handbook: R11 azure-databricks-project-blueprints
+# Databricks Runtime: 15.4+ LTS | CLI: v0.220+
+# =============================================================================
+
 bundle:
   name: azure_databricks_blueprints
+
+include:
+  - resources/*.yml
+
+variables:
+  catalog_name:
+    description: "Target Unity Catalog name"
+    default: "dev_lakehouse"
+  raw_storage_path:
+    description: "ABFS root landing path"
+    default: "abfss://raw@adlsgen2lakehouse.dfs.core.windows.net"
+
+sync:
+  exclude:
+    - .git
+    - .venv
+    - .pytest_cache
+    - tests
+    - docs
 
 targets:
   dev:
@@ -7,9 +32,33 @@ targets:
     default: true
     workspace:
       host: https://adb-dev.azuredatabricks.net
+    variables:
+      catalog_name: "dev_lakehouse"
+    run_as:
+      user_name: "lead-architect@moderndataengineer.uk"
+
+  staging:
+    mode: production
+    workspace:
+      host: https://adb-staging.azuredatabricks.net
+    variables:
+      catalog_name: "stage_lakehouse"
+    run_as:
+      service_principal_name: "11111111-2222-3333-4444-555555555555"
+    permissions:
+      - level: CAN_VIEW
+        group_name: "data-engineering-qa"
+
   prod:
     mode: production
     workspace:
       host: https://adb-prod.azuredatabricks.net
+    variables:
+      catalog_name: "prod_lakehouse"
     run_as:
       service_principal_name: "00000000-0000-0000-0000-000000000000"
+    permissions:
+      - level: CAN_MANAGE
+        group_name: "data-platform-admins"
+      - level: CAN_VIEW
+        group_name: "data-governance-officers"
