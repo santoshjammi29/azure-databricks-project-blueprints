@@ -3,8 +3,8 @@
   "github": "santoshjammi29/azure-databricks-project-blueprints",
   "name": "Databricks Project Blueprints",
   "role": "3 Full-scale production reference architectures: Retail Omnichannel Lakehouse, Real-time Fraud, Warehouse Cutover",
-  "last_synced": "2026-11-21T04:54:58.631073Z",
-  "entry_count": 9,
+  "last_synced": "2026-11-22T07:34:24.147332Z",
+  "entry_count": 10,
   "entries": [
     {
       "id": "azure-databricks-project-blueprints-common",
@@ -100,6 +100,17 @@
       "title": "Architecture: 04 Senior Interview Defense Matrix",
       "difficulty": "L400",
       "relative_path": "docs/04_senior_interview_defense_matrix.md",
+      "pillars": [
+        "Databricks Platform & Lakehouse",
+        "Real-Time Streaming & Event Architecture"
+      ]
+    },
+    {
+      "id": "azure-databricks-project-blueprints-curriculum-topics",
+      "type": "curriculum_topics_catalog",
+      "title": "Topics Directory: Databricks Project Blueprints",
+      "difficulty": "L200",
+      "relative_path": "topics/README.md",
       "pillars": [
         "Databricks Platform & Lakehouse",
         "Real-Time Streaming & Event Architecture"
