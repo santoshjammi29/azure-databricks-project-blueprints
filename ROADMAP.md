@@ -1,15 +1,16 @@
-# 🗺️ Databricks Project Blueprints — Interactive Curriculum Roadmap
+# 🗺️ Azure Databricks Project Blueprints — Interactive Curriculum Roadmap
 
 > **Interactive Checkbox Study Tracker & Mastery Progression**  
 > **Canonical Repository**: [santoshjammi29/azure-databricks-project-blueprints](https://github.com/santoshjammi29/azure-databricks-project-blueprints) | **Ecosystem**: [moderndataengineer.uk](https://moderndataengineer.uk)  
-> **Total Exercises & Drills**: `10` | **Primary Pillar**: `Databricks Platform & Lakehouse`
+> **Total Tracked Drills**: `10` | **Primary Authority**: `Databricks Platform, Unity Catalog & Delta Lake 3.x`  
+> **Structure**: Grouped by **Relevant Functional Sections**, then by **Difficulty Level**. All sections are **collapsible and collapsed by default**.
 
 ---
 
 ## How to Use This Roadmap
 
 1. **Fork this repository** to your personal GitHub account.
-2. Work through the modules in sequence or target specific architectural topics.
+2. Click to expand any functional section below.
 3. Check off boxes (`- [x]`) as you complete each exercise, drill, or notebook.
 4. Commit and push your progress to your personal branch to track your career journey!
 
@@ -19,32 +20,50 @@ Progress: [ ] 0 / 10 Completed (0.0%)
 
 ---
 
-## Curriculum Structure: The 4 Mastery Tiers
+## 📚 Functional Sections & Difficulty Breakdown
 
-```mermaid
-flowchart LR
-    T1["Tier 1: Foundations<br/>(Level 100)"] --> T2["Tier 2: Core Mechanics<br/>(Level 200)"]
-    T2 --> T3["Tier 3: Complex Scenarios<br/>(Level 300)"]
-    T3 --> T4["Tier 4: Staff Architect<br/>(Level 400)"]
-```
+<details>
+<summary><b>📂 Section: Docs (5 Drills)</b> — <i>Click to expand</i></summary>
 
-### 🟡 Tier 2: Core Mechanics & Implementation (Level 200)
-> Production pipeline patterns, schema validation, standard transformations, and unit tests.
+<details>
+<summary>&nbsp;&nbsp;<b>🔴 Tier 4: Production Hardening & Staff Architecture (Level 400) (5 Drills)</b></summary>
 
-- [ ] `azure-databricks-project-blueprints-curriculum-topics` — [Topics Directory: Databricks Project Blueprints](topics/README.md) `Level 200`
+- [ ] `azure-databricks-project-blueprints-doc-00_platform_architecture_security` — [Architecture: 00 Platform Architecture Security](docs/00_platform_architecture_security.md) `L400`
+- [ ] `azure-databricks-project-blueprints-doc-01_omnichannel_retail_lakehouse` — [Architecture: 01 Omnichannel Retail Lakehouse](docs/01_omnichannel_retail_lakehouse.md) `L400`
+- [ ] `azure-databricks-project-blueprints-doc-02_realtime_payments_fraud_aml` — [Architecture: 02 Realtime Payments Fraud Aml](docs/02_realtime_payments_fraud_aml.md) `L400`
+- [ ] `azure-databricks-project-blueprints-doc-03_legacy_warehouse_modernization` — [Architecture: 03 Legacy Warehouse Modernization](docs/03_legacy_warehouse_modernization.md) `L400`
+- [ ] `azure-databricks-project-blueprints-doc-04_senior_interview_defense_matrix` — [Architecture: 04 Senior Interview Defense Matrix](docs/04_senior_interview_defense_matrix.md) `L400`
 
-### 🔴 Tier 4: Production Hardening, FinOps & Staff Architecture (Level 400)
-> Enterprise trade-offs, cross-cloud DR, zero-trust security, and FinOps cost optimization.
+</details>
 
-- [ ] `azure-databricks-project-blueprints-common` — [Project: Common](src/common) `Level 400`
-- [ ] `azure-databricks-project-blueprints-project1_omnichannel_retail` — [Project: Project1 Omnichannel Retail](src/project1_omnichannel_retail) `Level 400`
-- [ ] `azure-databricks-project-blueprints-project2_realtime_fraud` — [Project: Project2 Realtime Fraud](src/project2_realtime_fraud) `Level 400`
-- [ ] `azure-databricks-project-blueprints-project3_warehouse_modernization` — [Project: Project3 Warehouse Modernization](src/project3_warehouse_modernization) `Level 400`
-- [ ] `azure-databricks-project-blueprints-doc-00_platform_architecture_security` — [Architecture: 00 Platform Architecture Security](docs/00_platform_architecture_security.md) `Level 400`
-- [ ] `azure-databricks-project-blueprints-doc-01_omnichannel_retail_lakehouse` — [Architecture: 01 Omnichannel Retail Lakehouse](docs/01_omnichannel_retail_lakehouse.md) `Level 400`
-- [ ] `azure-databricks-project-blueprints-doc-02_realtime_payments_fraud_aml` — [Architecture: 02 Realtime Payments Fraud Aml](docs/02_realtime_payments_fraud_aml.md) `Level 400`
-- [ ] `azure-databricks-project-blueprints-doc-03_legacy_warehouse_modernization` — [Architecture: 03 Legacy Warehouse Modernization](docs/03_legacy_warehouse_modernization.md) `Level 400`
-- [ ] `azure-databricks-project-blueprints-doc-04_senior_interview_defense_matrix` — [Architecture: 04 Senior Interview Defense Matrix](docs/04_senior_interview_defense_matrix.md) `Level 400`
+</details>
+
+<details>
+<summary><b>📂 Section: Src (4 Drills)</b> — <i>Click to expand</i></summary>
+
+<details>
+<summary>&nbsp;&nbsp;<b>🔴 Tier 4: Production Hardening & Staff Architecture (Level 400) (4 Drills)</b></summary>
+
+- [ ] `azure-databricks-project-blueprints-common` — [Project: Common](src/common) `L400`
+- [ ] `azure-databricks-project-blueprints-project1_omnichannel_retail` — [Project: Project1 Omnichannel Retail](src/project1_omnichannel_retail) `L400`
+- [ ] `azure-databricks-project-blueprints-project2_realtime_fraud` — [Project: Project2 Realtime Fraud](src/project2_realtime_fraud) `L400`
+- [ ] `azure-databricks-project-blueprints-project3_warehouse_modernization` — [Project: Project3 Warehouse Modernization](src/project3_warehouse_modernization) `L400`
+
+</details>
+
+</details>
+
+<details>
+<summary><b>📂 Section: Topics (1 Drills)</b> — <i>Click to expand</i></summary>
+
+<details>
+<summary>&nbsp;&nbsp;<b>🟡 Tier 2: Core Mechanics & Implementation (Level 200) (1 Drills)</b></summary>
+
+- [ ] `azure-databricks-project-blueprints-curriculum-topics` — [Topics Directory: Databricks Project Blueprints](topics/README.md) `L200`
+
+</details>
+
+</details>
 
 ---
 
