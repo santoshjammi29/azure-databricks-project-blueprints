@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/repo-header.svg" width="100%" alt="Repository Header Banner" />
+</p>
+
 # Azure Databricks Production Project Blueprints
 > **Senior Data Engineer & Lakehouse Architect Design Portfolio**
 
