@@ -1,11 +1,169 @@
 <p align="center">
-  <img src="assets/repo-header.svg" width="100%" alt="Repository Header Banner" />
+  <img src="assets/repo-header.svg" width="100%" alt="Azure Databricks Blueprints Banner" />
 </p>
 
 # Azure Databricks Production Project Blueprints
-> **Senior Data Engineer & Lakehouse Architect Design Portfolio**
 
-This repository contains end-to-end design blueprints, code implementations, and operational playbooks for building enterprise data platforms on Azure Databricks.
+<p align="center">
+  <a href="https://github.com/santoshjammi29/azure-databricks-project-blueprints/actions"><img src="https://img.shields.io/badge/CI-Passing-emerald?style=flat-square&logo=githubactions&logoColor=white" alt="CI Status"></a>
+  <a href="https://databricks.com/"><img src="https://img.shields.io/badge/Databricks-Runtime_15.4_LTS-FF3621?style=flat-square&logo=databricks&logoColor=white" alt="Databricks Runtime 15.4 LTS"></a>
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.10+"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square" alt="MIT License"></a>
+  <a href="https://moderndataengineer.uk"><img src="https://img.shields.io/badge/Ecosystem-Modern_Data_Engineer-blueviolet?style=flat-square" alt="Ecosystem Platform"></a>
+</p>
+
+## 🎯 Overview & Mission
+
+Production-grade enterprise project implementations on **Azure Databricks**, **Delta Lake 3.x**, and **Unity Catalog**. This repository delivers end-to-end reference architectures, Databricks Asset Bundles (DABs) infrastructure-as-code, Delta Live Tables (DLT) declarative pipelines, and automated parity testing suites designed for Lead Data Engineers, Lakehouse Architects, and interview defense preparation.
+
+---
+
+## 🚀 Quickstart & DABs Validation
+
+Validate and deploy the Databricks Asset Bundles locally or against your Azure Databricks workspace:
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/santoshjammi29/azure-databricks-project-blueprints.git
+cd azure-databricks-project-blueprints
+
+# 2. Validate Databricks Asset Bundle (IaC)
+databricks bundle validate -t dev
+
+# 3. Set up virtual environment and install test dependencies
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+# 4. Execute automated test suite (Ruff linter & pytest)
+pytest tests/
+```
+
+---
+
+## 🏛️ Master Enterprise Project Index & Blueprints
+
+### 1. Omnichannel Retail Sales & Inventory Lakehouse
+- **Pattern**: Metadata-driven ingestion, Auto Loader schema evolution, Lakeflow Declarative Pipelines.
+- **Key Techniques**:
+  - Grain modeling: Order line item fact (`fact_sales_line`) and daily stock snapshot (`fact_inventory_daily`).
+  - Liquid Clustering (`CLUSTER BY`) and Deletion Vectors (Merge-on-Read).
+  - Out-of-order CDC processing into SCD Type 2 dimensions via `APPLY CHANGES INTO`.
+  - Databricks SQL Serverless and Power BI Direct Lake delivery.
+
+### 2. Real-Time Payments Fraud & AML Monitoring
+- **Pattern**: Continuous streaming over Azure Event Hubs with low-latency alert generation.
+- **Key Techniques**:
+  - Structured Streaming with off-heap RocksDB state store provider.
+  - Event-time watermarking bounding 15-minute and 1-hour sliding velocity windows.
+  - Idempotent alert egress resolving dual-sink non-transactional delivery.
+  - Unity Catalog dynamic column masking for PCI-DSS compliance.
+
+### 3. Legacy Warehouse Modernization & Controlled Cutover
+- **Pattern**: Phased migration from legacy SQL warehouse to governed Lakehouse.
+- **Key Techniques**:
+  - Dependency-graph phased migration across 4 topological waves.
+  - Automated dual-run parity verification engine checking row counts, hash sums, and variance.
+  - Declarative Automation Bundles (DABs) for GitOps and multi-target deployments.
+  - Delta Time Travel rollback and recovery runbooks.
+
+---
+
+---
+
+
+---
+
+## 🖼️ Master Whiteboard Architecture Blueprints
+
+The repository incorporates publication-grade architectural whiteboard blueprints mirrored under [`assets/whiteboards/`](assets/whiteboards) and indexed with comprehensive multi-persona breakdowns, failure modes, and engine internals in [`docs/whiteboard_diagrams/README.md`](docs/whiteboard_diagrams/README.md).
+
+- 🖼️ **[Master Whiteboard Blueprints Hub](docs/whiteboard_diagrams/handbook_whiteboard_blueprints.md)**: Complete whiteboard architecture blueprints with storage vs. compute, control vs. data planes, memory tiers, and failure modes.
+- 📊 **[Spark Architecture & Tuning Cheatsheet](assets/whiteboards/spark_architecture_catalyst_cheatsheet.jpg)**: High-resolution visual cheatsheet covering cluster topology, Catalyst compiler phases, and memory tiers.
+- 🔀 **[Join Strategies Decision Matrix](assets/whiteboards/spark_join_strategies_decision_matrix.jpg)**: Visual flowchart and decision tree for distributed joins and broadcast thresholds.
+- ⚡ **[Skew & Memory Spill Triage](assets/whiteboards/spark_performance_skew_spill_triage.jpg)**: Step-by-step diagnostic workflow for data skew, spill to disk, and OOM triage.
+
+### 📐 Visual Blueprints Showcase (2x2 Grid)
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="docs/whiteboard_diagrams/README.md#databricks-medallion-pipeline">
+        <img src="assets/whiteboards/databricks_medallion_architecture.webp" alt="Databricks Medallion Lakehouse Architecture" width="100%" />
+      </a>
+      <br><strong>Databricks Medallion Lakehouse Architecture</strong><br>
+      <em>Core architecture for Project 01: Bronze raw landing, Silver conformed cleaning, and Gold analytics delivery.</em>
+    </td>
+    <td width="50%" valign="top">
+      <a href="docs/whiteboard_diagrams/README.md#lakehouse-ingestion-autoloader">
+        <img src="assets/whiteboards/lakehouse_ingestion_autoloader_architecture.webp" alt="End-to-End Batch & Incremental Lakehouse Ingestion" width="100%" />
+      </a>
+      <br><strong>End-to-End Batch & Incremental Lakehouse Ingestion</strong><br>
+      <em>Auto Loader file notification, schema evolution, and streaming micro-batch ingestion from ADLS Gen2.</em>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="docs/whiteboard_diagrams/README.md#kafka-event-streaming-pipeline">
+        <img src="assets/whiteboards/kafka_event_streaming_pipeline.webp" alt="Real-Time Event Streaming & Kafka Architecture" width="100%" />
+      </a>
+      <br><strong>Real-Time Event Streaming & Kafka Architecture</strong><br>
+      <em>Core pipeline for Project 02: Azure Event Hubs ingestion, consumer group rebalancing, and low-latency processing.</em>
+    </td>
+    <td width="50%" valign="top">
+      <a href="docs/whiteboard_diagrams/README.md#streaming-dlq-recovery-flow">
+        <img src="assets/whiteboards/streaming_dlq_recovery_flow_architecture.webp" alt="Stateful Streaming Failure Recovery & Dead-Letter Queue (DLQ) Remediation" width="100%" />
+      </a>
+      <br><strong>Stateful Streaming Failure Recovery & DLQ Remediation</strong><br>
+      <em>Poison pill message quarantine, exponential backoff retries, and automated transaction recovery.</em>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="docs/whiteboard_diagrams/README.md#delta-live-tables-pipeline">
+        <img src="assets/whiteboards/databricks_dlt_pipeline.webp" alt="Delta Live Tables (DLT) Declarative Pipeline" width="100%" />
+      </a>
+      <br><strong>Delta Live Tables (DLT) Declarative Pipeline</strong><br>
+      <em>Declarative ETL DAG, Streaming Tables vs Materialized Views, and automated data quality expectations.</em>
+    </td>
+    <td width="50%" valign="top">
+      <a href="docs/whiteboard_diagrams/README.md#databricks-dabs-devops-pipeline">
+        <img src="assets/whiteboards/databricks_dabs_devops_pipeline.webp" alt="Databricks Asset Bundles (DABs) & Serverless CI/CD Architecture" width="100%" />
+      </a>
+      <br><strong>Databricks Asset Bundles (DABs) & Serverless CI/CD Architecture</strong><br>
+      <em>Core DevOps for Project 03: GitOps release automation, bundle validation, and multi-target deployments.</em>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="docs/whiteboard_diagrams/README.md#lakehouse-acid-concurrency">
+        <img src="assets/whiteboards/lakehouse_acid_concurrency.webp" alt="Lakehouse ACID Concurrency & Write Conflict Resolution Matrix" width="100%" />
+      </a>
+      <br><strong>Lakehouse ACID Concurrency & Write Conflict Resolution Matrix</strong><br>
+      <em>Optimistic Concurrency Control (OCC), commit collision triage, and idempotent MERGE INTO patterns.</em>
+    </td>
+    <td width="50%" valign="top">
+      <a href="docs/whiteboard_diagrams/README.md#lakehouse-access-masking-lifecycle">
+        <img src="assets/whiteboards/lakehouse_access_masking_lifecycle_architecture.webp" alt="Lakehouse Fine-Grained Access Control, Dynamic Masking & Entra/ABAC Enforcement" width="100%" />
+      </a>
+      <br><strong>Lakehouse Fine-Grained Access Control & Dynamic Masking</strong><br>
+      <em>Unity Catalog SQL UDF masking and row filters protecting sensitive PCI-DSS cardholder payment data.</em>
+    </td>
+  </tr>
+</table>
+
+> 🔍 **Explore all 52 blueprints with 5-persona breakdowns, failure modes, and engine internals in [docs/whiteboard_diagrams/README.md](docs/whiteboard_diagrams/README.md)**.
+
+---
+
+## 🛠️ Repository Directory Structure
+```text
+├── databricks.yml              # Declarative Automation Bundles root definition
+├── docs/                       # Architectural specifications and interview defense guides
+├── resources/                  # Lakeflow workflow resource definitions
+├── src/                        # PySpark pipelines, SQL DDL, and UDFs
+└── tests/                      # Automated unit tests with Pytest
+```
 
 ## 🧠 Core Curriculum Concepts & Topics (208 Topics Covered)
 
@@ -539,118 +697,6 @@ This repository contains end-to-end design blueprints, code implementations, and
 
 
 
-## Master Project Index
-
-### 1. Omnichannel Retail Sales & Inventory Lakehouse
-- **Pattern**: Metadata-driven ingestion, Auto Loader schema evolution, Lakeflow Declarative Pipelines.
-- **Key Techniques**:
-  - Grain modeling: Order line item fact (`fact_sales_line`) and daily stock snapshot (`fact_inventory_daily`).
-  - Liquid Clustering (`CLUSTER BY`) and Deletion Vectors (Merge-on-Read).
-  - Out-of-order CDC processing into SCD Type 2 dimensions via `APPLY CHANGES INTO`.
-  - Databricks SQL Serverless and Power BI Direct Lake delivery.
-
-### 2. Real-Time Payments Fraud & AML Monitoring
-- **Pattern**: Continuous streaming over Azure Event Hubs with low-latency alert generation.
-- **Key Techniques**:
-  - Structured Streaming with off-heap RocksDB state store provider.
-  - Event-time watermarking bounding 15-minute and 1-hour sliding velocity windows.
-  - Idempotent alert egress resolving dual-sink non-transactional delivery.
-  - Unity Catalog dynamic column masking for PCI-DSS compliance.
-
-### 3. Legacy Warehouse Modernization & Controlled Cutover
-- **Pattern**: Phased migration from legacy SQL warehouse to governed Lakehouse.
-- **Key Techniques**:
-  - Dependency-graph phased migration across 4 topological waves.
-  - Automated dual-run parity verification engine checking row counts, hash sums, and variance.
-  - Declarative Automation Bundles (DABs) for GitOps and multi-target deployments.
-  - Delta Time Travel rollback and recovery runbooks.
-
----
-
----
-
-## 🖼️ Master Whiteboard Architecture Blueprints
-
-The repository incorporates publication-grade architectural whiteboard blueprints mirrored under [`assets/whiteboards/`](assets/whiteboards) and indexed with comprehensive multi-persona breakdowns, failure modes, and engine internals in [`docs/whiteboard_diagrams/README.md`](docs/whiteboard_diagrams/README.md).
-
-- 🖼️ **[Master Whiteboard Blueprints Hub](docs/whiteboard_diagrams/handbook_whiteboard_blueprints.md)**: Complete whiteboard architecture blueprints with storage vs. compute, control vs. data planes, memory tiers, and failure modes.
-- 📊 **[Spark Architecture & Tuning Cheatsheet](assets/whiteboards/spark_architecture_catalyst_cheatsheet.jpg)**: High-resolution visual cheatsheet covering cluster topology, Catalyst compiler phases, and memory tiers.
-- 🔀 **[Join Strategies Decision Matrix](assets/whiteboards/spark_join_strategies_decision_matrix.jpg)**: Visual flowchart and decision tree for distributed joins and broadcast thresholds.
-- ⚡ **[Skew & Memory Spill Triage](assets/whiteboards/spark_performance_skew_spill_triage.jpg)**: Step-by-step diagnostic workflow for data skew, spill to disk, and OOM triage.
-
-### 📐 Visual Blueprints Showcase (2x2 Grid)
-
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <a href="docs/whiteboard_diagrams/README.md#databricks-medallion-pipeline">
-        <img src="assets/whiteboards/databricks_medallion_architecture.webp" alt="Databricks Medallion Lakehouse Architecture" width="100%" />
-      </a>
-      <br><strong>Databricks Medallion Lakehouse Architecture</strong><br>
-      <em>Core architecture for Project 01: Bronze raw landing, Silver conformed cleaning, and Gold analytics delivery.</em>
-    </td>
-    <td width="50%" valign="top">
-      <a href="docs/whiteboard_diagrams/README.md#lakehouse-ingestion-autoloader">
-        <img src="assets/whiteboards/lakehouse_ingestion_autoloader_architecture.webp" alt="End-to-End Batch & Incremental Lakehouse Ingestion" width="100%" />
-      </a>
-      <br><strong>End-to-End Batch & Incremental Lakehouse Ingestion</strong><br>
-      <em>Auto Loader file notification, schema evolution, and streaming micro-batch ingestion from ADLS Gen2.</em>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <a href="docs/whiteboard_diagrams/README.md#kafka-event-streaming-pipeline">
-        <img src="assets/whiteboards/kafka_event_streaming_pipeline.webp" alt="Real-Time Event Streaming & Kafka Architecture" width="100%" />
-      </a>
-      <br><strong>Real-Time Event Streaming & Kafka Architecture</strong><br>
-      <em>Core pipeline for Project 02: Azure Event Hubs ingestion, consumer group rebalancing, and low-latency processing.</em>
-    </td>
-    <td width="50%" valign="top">
-      <a href="docs/whiteboard_diagrams/README.md#streaming-dlq-recovery-flow">
-        <img src="assets/whiteboards/streaming_dlq_recovery_flow_architecture.webp" alt="Stateful Streaming Failure Recovery & Dead-Letter Queue (DLQ) Remediation" width="100%" />
-      </a>
-      <br><strong>Stateful Streaming Failure Recovery & DLQ Remediation</strong><br>
-      <em>Poison pill message quarantine, exponential backoff retries, and automated transaction recovery.</em>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <a href="docs/whiteboard_diagrams/README.md#delta-live-tables-pipeline">
-        <img src="assets/whiteboards/databricks_dlt_pipeline.webp" alt="Delta Live Tables (DLT) Declarative Pipeline" width="100%" />
-      </a>
-      <br><strong>Delta Live Tables (DLT) Declarative Pipeline</strong><br>
-      <em>Declarative ETL DAG, Streaming Tables vs Materialized Views, and automated data quality expectations.</em>
-    </td>
-    <td width="50%" valign="top">
-      <a href="docs/whiteboard_diagrams/README.md#databricks-dabs-devops-pipeline">
-        <img src="assets/whiteboards/databricks_dabs_devops_pipeline.webp" alt="Databricks Asset Bundles (DABs) & Serverless CI/CD Architecture" width="100%" />
-      </a>
-      <br><strong>Databricks Asset Bundles (DABs) & Serverless CI/CD Architecture</strong><br>
-      <em>Core DevOps for Project 03: GitOps release automation, bundle validation, and multi-target deployments.</em>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <a href="docs/whiteboard_diagrams/README.md#lakehouse-acid-concurrency">
-        <img src="assets/whiteboards/lakehouse_acid_concurrency.webp" alt="Lakehouse ACID Concurrency & Write Conflict Resolution Matrix" width="100%" />
-      </a>
-      <br><strong>Lakehouse ACID Concurrency & Write Conflict Resolution Matrix</strong><br>
-      <em>Optimistic Concurrency Control (OCC), commit collision triage, and idempotent MERGE INTO patterns.</em>
-    </td>
-    <td width="50%" valign="top">
-      <a href="docs/whiteboard_diagrams/README.md#lakehouse-access-masking-lifecycle">
-        <img src="assets/whiteboards/lakehouse_access_masking_lifecycle_architecture.webp" alt="Lakehouse Fine-Grained Access Control, Dynamic Masking & Entra/ABAC Enforcement" width="100%" />
-      </a>
-      <br><strong>Lakehouse Fine-Grained Access Control & Dynamic Masking</strong><br>
-      <em>Unity Catalog SQL UDF masking and row filters protecting sensitive PCI-DSS cardholder payment data.</em>
-    </td>
-  </tr>
-</table>
-
-> 🔍 **Explore all 52 blueprints with 5-persona breakdowns, failure modes, and engine internals in [docs/whiteboard_diagrams/README.md](docs/whiteboard_diagrams/README.md)**.
-
----
-
 ## 🌐 Ecosystem Interlinking & Sister Repositories
 
 The Modern Data Engineering Lakehouse Ecosystem is an integrated suite of 14 production-grade, specialized repositories anchored by the **[Modern Data Engineer Platform (`moderndataengineer.uk`)](https://github.com/santoshjammi29/moderndataengineer)**. Use this cross-reference matrix to navigate directly between complementary implementations across our repositories:
@@ -673,16 +719,7 @@ The Modern Data Engineering Lakehouse Ecosystem is an integrated suite of 14 pro
 
 ---
 
-## Repository Structure
-```text
-├── databricks.yml              # Declarative Automation Bundles root definition
-├── docs/                       # Architectural specifications and interview defense guides
-├── resources/                  # Lakeflow workflow resource definitions
-├── src/                        # PySpark pipelines, SQL DDL, and UDFs
-└── tests/                      # Automated unit tests with Pytest
-```
-
-## License
+## 📜 License
 MIT License
 
 
