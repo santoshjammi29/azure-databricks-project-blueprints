@@ -13,13 +13,13 @@
 flowchart TD
     subgraph INGEST["1. Ingestion Tier"]
         POS["Store POS Terminals (JSON/Parquet)"] -->|ADF Copy Activity| LND["ADLS Gen2 (/landing/sales/)"]
-        ERP["ERP SAP (Delta CDC / Tables)"] -->|Lakeflow Connect / ADF| LND
+        ERP["ERP SAP (Delta CDC / Tables)"] -->|"Lakeflow Connect / ADF"| LND
         LND -->|Auto Loader cloudFiles
 addNewColumns + _rescued_data| BRZ["bronze.sales_raw
 (Managed Delta)"]
     end
 
-    subgraph CLEANSING["2. Modeling & Conforming (Lakeflow Declarative)"]
+    subgraph CLEANSING["2. Modeling & Conforming (Lakeflow<br/>Declarative)"]
         BRZ -->|DLT Expectations
 EXPECT ON VIOLATION DROP ROW| SLV_SALES["silver.sales_orders_conformed
 CLUSTER BY (store_id, order_ts)
@@ -34,7 +34,7 @@ SCD TYPE 2| SLV_PROD["silver.dim_products_scd2
 (Grain: One row per order line)"]
         SLV_SALES -->|Windowed Daily Stock Balances| GLD_INV["gold.fact_inventory_daily
 (Grain: SKU x Store x Day)"]
-        GLD_LINE & GLD_INV -->|Serverless SQL Warehouse| BI["Power BI Direct Lake / Databricks SQL"]
+        GLD_LINE & GLD_INV -->|Serverless SQL Warehouse| BI["Power BI Direct Lake / Databricks<br/>SQL"]
     end
 ```
 

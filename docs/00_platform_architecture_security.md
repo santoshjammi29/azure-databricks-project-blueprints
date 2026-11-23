@@ -11,10 +11,10 @@ flowchart LR
     D --> F
     G["Azure Event Hubs / Kafka"] --> H["Streaming Pipeline (RocksDB)"]
     H --> F
-    F --> I["Lakeflow Declarative Pipelines: Silver & Gold"]
-    I --> J["Unity Catalog: Access, Lineage, Policies"]
-    J --> K["Databricks SQL / Power BI / Operational Sinks"]
-    B -.->|Webhook / REST API Trigger| L["Lakeflow Jobs & Pipelines Trigger"]
+    F --> I["Lakeflow Declarative Pipelines:<br/>Silver & Gold"]
+    I --> J["Unity Catalog: Access, Lineage,<br/>Policies"]
+    J --> K["Databricks SQL / Power BI /<br/>Operational Sinks"]
+    B -.->|"Webhook / REST API Trigger"| L["Lakeflow Jobs & Pipelines Trigger"]
 ```
 
 ### Responsibility Matrix

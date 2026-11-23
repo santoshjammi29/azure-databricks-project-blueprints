@@ -12,7 +12,7 @@
 ```mermaid
 flowchart TD
     subgraph STREAM_INGEST["1. High-Throughput Streaming Ingestion"]
-        PAY["Payment Authorization Gateways"] -->|JSON / Avro over TLS 1.3| EH["Azure Event Hubs (Dedicated Cluster)
+        PAY["Payment Authorization Gateways"] -->|"JSON / Avro over TLS 1.3"| EH["Azure Event Hubs (Dedicated Cluster)
 Partition Key: hashed_account_id"]
         EH -->|Spark Structured Streaming
 maxEventsPerTrigger: 50000| BRZ_PAY["bronze.payment_events_stream
@@ -24,13 +24,13 @@ maxEventsPerTrigger: 50000| BRZ_PAY["bronze.payment_events_stream
 RocksDB State Store Provider| SLV_VELOCITY["silver.account_sliding_velocity
 (15-min & 1-hour Sliding Windows)"]
         REF["ADF: Core Banking Watchlists"] -->|Lakehouse Federation| EXT["silver.sanction_watchlists"]
-        SLV_VELOCITY & EXT -->|Stream-Static Non-Blocking Join| GLD_ALERTS["gold.fraud_detection_alerts
+        SLV_VELOCITY & EXT -->|"Stream-Static Non-Blocking<br/>Join"| GLD_ALERTS["gold.fraud_detection_alerts
 (Real-Time Risk Scoring)"]
     end
 
     subgraph ACTION_DISPOSITION["3. Operational Serving & Audit"]
-        GLD_ALERTS -->|Operational Sink via Event Hubs| OPS["Operational Fraud Queue / Case Mgmt"]
-        GLD_ALERTS -->|Unity Catalog Governed Mart| AUDIT["AML Regulatory Reporting (DNB / ECB / FinCEN)"]
+        GLD_ALERTS -->|"Operational Sink via Event<br/>Hubs"| OPS["Operational Fraud Queue / Case<br/>Mgmt"]
+        GLD_ALERTS -->|Unity Catalog Governed Mart| AUDIT["AML Regulatory Reporting (DNB /<br/>ECB / FinCEN)"]
         AUDIT -.->|Automated Lineage Graph| UC_TRACE["system.access.table_lineage"]
     end
 ```
