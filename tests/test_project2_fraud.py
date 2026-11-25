@@ -52,7 +52,7 @@ class TestFraudAlertEgressIdempotency(unittest.TestCase):
         }
         serialized = json.dumps(alert_payload)
         parsed = json.loads(serialized)
-        
+
         required_fields = ["account_id", "transaction_id", "amount_eur", "rule_name", "risk_score", "event_time"]
         for field in required_fields:
             assert field in parsed, f"Missing required contract field: {field}"
