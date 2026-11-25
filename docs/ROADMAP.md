@@ -28,11 +28,11 @@ Progress: [ ] 0 / 10 Completed (0.0%)
 <details>
 <summary>&nbsp;&nbsp;<b>🔴 Tier 4: Production Hardening & Staff Architecture (Level 400) (5 Drills)</b></summary>
 
-- [ ] `azure-databricks-project-blueprints-doc-00_platform_architecture_security` — [Architecture: 00 Platform Architecture Security](docs/00_platform_architecture_security.md) `L400`
-- [ ] `azure-databricks-project-blueprints-doc-01_omnichannel_retail_lakehouse` — [Architecture: 01 Omnichannel Retail Lakehouse](docs/01_omnichannel_retail_lakehouse.md) `L400`
-- [ ] `azure-databricks-project-blueprints-doc-02_realtime_payments_fraud_aml` — [Architecture: 02 Realtime Payments Fraud Aml](docs/02_realtime_payments_fraud_aml.md) `L400`
-- [ ] `azure-databricks-project-blueprints-doc-03_legacy_warehouse_modernization` — [Architecture: 03 Legacy Warehouse Modernization](docs/03_legacy_warehouse_modernization.md) `L400`
-- [ ] `azure-databricks-project-blueprints-doc-04_senior_interview_defense_matrix` — [Architecture: 04 Senior Interview Defense Matrix](docs/04_senior_interview_defense_matrix.md) `L400`
+- [ ] `azure-databricks-project-blueprints-doc-00_platform_architecture_security` — [Architecture: 00 Platform Architecture Security](../docs/00_platform_architecture_security.md) `L400`
+- [ ] `azure-databricks-project-blueprints-doc-01_omnichannel_retail_lakehouse` — [Architecture: 01 Omnichannel Retail Lakehouse](../docs/01_omnichannel_retail_lakehouse.md) `L400`
+- [ ] `azure-databricks-project-blueprints-doc-02_realtime_payments_fraud_aml` — [Architecture: 02 Realtime Payments Fraud Aml](../docs/02_realtime_payments_fraud_aml.md) `L400`
+- [ ] `azure-databricks-project-blueprints-doc-03_legacy_warehouse_modernization` — [Architecture: 03 Legacy Warehouse Modernization](../docs/03_legacy_warehouse_modernization.md) `L400`
+- [ ] `azure-databricks-project-blueprints-doc-04_senior_interview_defense_matrix` — [Architecture: 04 Senior Interview Defense Matrix](../docs/04_senior_interview_defense_matrix.md) `L400`
 
 </details>
 
@@ -44,10 +44,10 @@ Progress: [ ] 0 / 10 Completed (0.0%)
 <details>
 <summary>&nbsp;&nbsp;<b>🔴 Tier 4: Production Hardening & Staff Architecture (Level 400) (4 Drills)</b></summary>
 
-- [ ] `azure-databricks-project-blueprints-common` — [Project: Common](src/common) `L400`
-- [ ] `azure-databricks-project-blueprints-project1_omnichannel_retail` — [Project: Project1 Omnichannel Retail](src/project1_omnichannel_retail) `L400`
-- [ ] `azure-databricks-project-blueprints-project2_realtime_fraud` — [Project: Project2 Realtime Fraud](src/project2_realtime_fraud) `L400`
-- [ ] `azure-databricks-project-blueprints-project3_warehouse_modernization` — [Project: Project3 Warehouse Modernization](src/project3_warehouse_modernization) `L400`
+- [ ] `azure-databricks-project-blueprints-common` — [Project: Common](../src/common) `L400`
+- [ ] `azure-databricks-project-blueprints-project1_omnichannel_retail` — [Project: Project1 Omnichannel Retail](../src/project1_omnichannel_retail) `L400`
+- [ ] `azure-databricks-project-blueprints-project2_realtime_fraud` — [Project: Project2 Realtime Fraud](../src/project2_realtime_fraud) `L400`
+- [ ] `azure-databricks-project-blueprints-project3_warehouse_modernization` — [Project: Project3 Warehouse Modernization](../src/project3_warehouse_modernization) `L400`
 
 </details>
 
@@ -59,7 +59,7 @@ Progress: [ ] 0 / 10 Completed (0.0%)
 <details>
 <summary>&nbsp;&nbsp;<b>🟡 Tier 2: Core Mechanics & Implementation (Level 200) (1 Drills)</b></summary>
 
-- [ ] `azure-databricks-project-blueprints-curriculum-topics` — [Topics Directory: Databricks Project Blueprints](topics/README.md) `L200`
+- [ ] `azure-databricks-project-blueprints-curriculum-topics` — [Topics Directory: Databricks Project Blueprints](../topics/README.md) `L200`
 
 </details>
 

@@ -1,5 +1,4 @@
 # Project 1: Auto Loader Incremental File Ingestion
-from pyspark.sql import SparkSession
 from pyspark.sql import functions as F
 
 def run_auto_loader_bronze(spark, landing_path, schema_location, checkpoint_location, target_table):

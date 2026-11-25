@@ -13,7 +13,6 @@ try:
 except ImportError:
     pytest = None
 import unittest
-from unittest.mock import patch, MagicMock
 
 
 class TestSCDType2Transformations(unittest.TestCase):

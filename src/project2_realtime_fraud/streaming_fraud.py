@@ -1,5 +1,4 @@
 # Project 2: Real-Time Payments Fraud Streaming Engine
-from pyspark.sql import SparkSession
 from pyspark.sql import functions as F
 
 def build_fraud_detection_stream(spark, event_hub_config, checkpoint_path, target_table):

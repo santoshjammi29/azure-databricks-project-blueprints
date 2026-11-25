@@ -1,5 +1,4 @@
 # Project 3: Automated Dual-Run Parity & Reconciliation Engine
-from pyspark.sql import SparkSession
 from pyspark.sql import functions as F
 
 def reconcile_outputs(spark, legacy_table, lakehouse_table, join_keys, metric_columns, tolerance=0.0001):
@@ -19,7 +18,7 @@ def reconcile_outputs(spark, legacy_table, lakehouse_table, join_keys, metric_co
 
     reconciliation_results = joined.select(*join_keys, *diff_exprs)
     failures = reconciliation_results.filter(
-        F.greatest(*[f"{col_name}_has_variance" for col_name in metric_columns]) == True
+        F.greatest(*[f"{col_name}_has_variance" for col_name in metric_columns])
     )
-    
+
     return failures

@@ -1,8 +1,7 @@
 # Project 2: Idempotent Alert Egress Handler
-import json
 from pyspark.sql import functions as F
 
-def write_idempotent_alerts_to_event_hub(micro_batch_df, batch_id):
+def write_idempotent_alerts_to_event_hub(micro_batch_df, batch_id, event_hubs_egress_conf=None):
     if micro_batch_df.isEmpty():
         return
 
@@ -19,6 +18,6 @@ def write_idempotent_alerts_to_event_hub(micro_batch_df, batch_id):
     (
         alerts.write
         .format("azureEventHubs")
-        .options(**event_hubs_egress_conf)
+        .options(**(event_hubs_egress_conf or {}))
         .save()
     )
